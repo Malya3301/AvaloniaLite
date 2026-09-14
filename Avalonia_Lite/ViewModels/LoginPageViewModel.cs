@@ -4,15 +4,21 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia_Lite.Models;
+using Avalonia_Lite.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Avalonia_Lite.ViewModels
 {
-    internal partial class LoginPageViewModel : ViewModelBase
+    public partial class LoginPageViewModel : ViewModelBase
     {
         [ObservableProperty]
         private ObservableCollection<User> _users = new();
+
+        [ObservableProperty]
+        private User? _selectedUser;
 
         public LoginPageViewModel()
         {
@@ -21,8 +27,9 @@ namespace Avalonia_Lite.ViewModels
 
         public void Refresh()
         {
-            Users = new ObservableCollection<User>(
-                DbConection.Test320Context.Users.ToList());
+            Users = new ObservableCollection<User>(DbConection.Test320Context.Users.ToList());
         }
+
+        
     }
 }

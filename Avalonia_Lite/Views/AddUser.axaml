@@ -1,0 +1,24 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:Avalonia_Lite.ViewModels"
+        x:DataType="vm:AddViewModel" 
+        Width="350" Height="220" 
+        WindowStartupLocation="CenterOwner"
+
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Avalonia_Lite.Views.AddUser"
+        Title="Пользователь">
+
+  
+        <StackPanel Margin="15" VerticalAlignment="Center"> 
+            <Label>Имя</Label> 
+            <TextBox Text="{Binding User.Name}" /> 
+            <Label>Телефон</Label> 
+            <TextBox Text="{Binding User.PhoneNumber}" /> 
+            <Button x:Name="btnAdd" Content="Сохранить" 
+                HorizontalAlignment="Center" Margin="0,15,0,0" 
+                Click="btnAdd_Click"/> 
+        </StackPanel>
+</Window>
