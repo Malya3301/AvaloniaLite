@@ -1,0 +1,23 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Avalonia_Lite.Views.LoginPage">
+ 
+    <Grid RowDefinitions="*, Auto" Margin="10">
+         <DataGrid IsReadOnly="True" Grid.Row="0" 
+                  Name="MainDataGridUsers" 
+                  ItemsSource="{Binding }"> 
+            <DataGrid.Columns> 
+                <DataGridTextColumn Header="ФИО" Binding="{Binding Name}" Width="*"/> 
+                <DataGridTextColumn Header="Телефон" Binding="{Binding PhoneNumber}" 
+Width="*"/> 
+            </DataGrid.Columns> 
+        </DataGrid> 
+        <Button Content="Добавить" Grid.Row="1" x:Name="btnTest" 
+                Margin="0,10,0,0" HorizontalAlignment="Center" 
+                Click="btnTest_Click"/>
+    
+    </Grid>
+</UserControl>
