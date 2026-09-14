@@ -42,5 +42,17 @@ namespace Avalonia_Lite.Views
 
             viewModel.Refresh();
         }
+
+
+        private async void btnDelete_Click(object? sender, RoutedEventArgs e)
+        {
+            if (viewModel.SelectedUser is not User selected) return;
+            var dialog = new ConfirmDialog($"Удалить пользователя {selected.Name}?");
+            if (TopLevel.GetTopLevel(this) is Window owner
+            && await dialog.ShowDialog<bool>(owner))
+            {
+                viewModel.DeleteSelected();
+            }
+        }
     }
 }

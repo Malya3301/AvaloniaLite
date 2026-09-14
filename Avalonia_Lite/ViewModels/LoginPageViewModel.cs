@@ -20,6 +20,10 @@ namespace Avalonia_Lite.ViewModels
         [ObservableProperty]
         private User? _selectedUser;
 
+        [ObservableProperty]
+        private string _searchText = "";
+
+        partial void OnSearchTextChanged(string value) => Refresh();
         public LoginPageViewModel()
         {
             Refresh();
@@ -27,9 +31,20 @@ namespace Avalonia_Lite.ViewModels
 
         public void Refresh()
         {
-            Users = new ObservableCollection<User>(DbConection.Test320Context.Users.ToList());
+            var query = DbConection.Test320Context.Users.AsQueryable();
+            if (!string.IsNullOrWhiteSpace(SearchText))
+                query = query.Where(u => u.Name != null && u.Name.Contains(SearchText));
+            Users = new ObservableCollection<User>(query.ToList());
         }
 
-        
+        public void DeleteSelected()
+        {
+            if (SelectedUser == null) return;
+            DbConection.Test320Context.Users.Remove(SelectedUser);
+            DbConection.Test320Context.SaveChanges();
+            Refresh();
+        }
+
+
     }
 }
