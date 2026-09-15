@@ -1,4 +1,4 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+ï»¿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -9,22 +9,22 @@
     
     
         <Grid RowDefinitions="Auto,*, Auto" Margin="10">
-        <TextBox Grid.Row="0" Text="{Binding SearchText}" Watermark="Ïîèñê ïî èìåíè..." Margin="0,0,0,10"/>
+        <TextBox Grid.Row="0" Text="{Binding SearchText}" Watermark="ÐŸÐ¾Ð¸ÑÐº Ð¿Ð¾ Ð¸Ð¼ÐµÐ½Ð¸..." Margin="0,0,0,10"/>
              <DataGrid IsReadOnly="True" Grid.Row="1" 
                   Name="MainDataGridUsers" 
                   ItemsSource="{Binding Users}"
                   SelectedItem="{Binding SelectedUser}" 
                   DoubleTapped="MainDataGridUsers_DoubleTapped"> 
             <DataGrid.Columns> 
-                <DataGridTextColumn Header="ÔÈÎ" Binding="{Binding Name}" Width="*"/> 
-                <DataGridTextColumn Header="Òåëåôîí" Binding="{Binding PhoneNumber}" 
+                <DataGridTextColumn Header="Ð¤Ð˜Ðž" Binding="{Binding Name}" Width="*"/> 
+                <DataGridTextColumn Header="Ð¢ÐµÐ»ÐµÑ„Ð¾Ð½" Binding="{Binding PhoneNumber}" 
         Width="*"/> 
             </DataGrid.Columns> 
         </DataGrid> 
-        <Button Content="Äîáàâèòü" Grid.Row="2" x:Name="btnTest" 
+        <Button Content="Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ" Grid.Row="2" x:Name="btnTest" 
                 Margin="0,10,0,0" HorizontalAlignment="Center" 
                 Click="btnTest_Click"/>
-        <Button Content="Óäàëèòü" Grid.Row="2" x:Name="btnTest1" 
+        <Button Content="Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ" Grid.Row="2" x:Name="btnTest1" 
                 Margin="0,10,0,0" HorizontalAlignment="Left" 
                 Click="btnDelete_Click">
             

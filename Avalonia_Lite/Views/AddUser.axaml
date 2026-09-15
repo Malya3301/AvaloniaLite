@@ -1,4 +1,4 @@
-<Window xmlns="https://github.com/avaloniaui"
+п»ї<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -9,15 +9,15 @@
 
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Avalonia_Lite.Views.AddUser"
-        Title="Пользователь">
+        Title="РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ">
 
   
         <StackPanel Margin="15" VerticalAlignment="Center"> 
-            <Label>Имя</Label> 
+            <Label>РРјСЏ</Label> 
             <TextBox Text="{Binding User.Name}" /> 
-            <Label>Телефон</Label> 
+            <Label>РўРµР»РµС„РѕРЅ</Label> 
             <TextBox Text="{Binding User.PhoneNumber}" /> 
-            <Button x:Name="btnAdd" Content="Сохранить" 
+            <Button x:Name="btnAdd" Content="РЎРѕС…СЂР°РЅРёС‚СЊ" 
                 HorizontalAlignment="Center" Margin="0,15,0,0" 
                 Click="btnAdd_Click"/> 
         </StackPanel>
